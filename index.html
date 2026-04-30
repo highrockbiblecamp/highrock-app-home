@@ -107,6 +107,55 @@
       font-size: 14px;
       color: #777;
     }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.5);
+    }
+
+    .modal-content {
+      background-color: white;
+      margin: 25% auto;
+      padding: 20px;
+      border-radius: 12px;
+      width: 80%;
+      max-width: 350px;
+      text-align: center;
+    }
+
+    .modal-button {
+      display: block;
+      width: 100%;
+      padding: 14px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .apple {
+      background: #000;
+      color: white;
+    }
+
+    .google {
+      background: #4285F4;
+      color: white;
+    }
+
+    .close {
+      background: #ccc;
+      color: black;
+    }
   </style>
 </head>
 
@@ -137,7 +186,7 @@
 
     <a class="button staff" href="https://highrockbiblecamp.org/register/staff">Staff Resources</a>
 
-    <a class="button directions" href="#" onclick="chooseMaps()">Get Directions</a>
+    <a class="button directions" href="#" onclick="openMapModal()">Get Directions</a>
 
     <p class="footer">
       Stay connected with High Rock Bible Camp all year long.
@@ -145,14 +194,42 @@
 
   </div>
 
-  <script>
-    function chooseMaps() {
-      const address = encodeURIComponent("High Rock Bible Camp");
+  <!-- Map Choice Modal -->
+  <div id="mapModal" class="modal">
+    <div class="modal-content">
+      <h3>Choose Navigation App</h3>
 
-      if (confirm("Press OK for Apple Maps or Cancel for Google Maps")) {
-        window.location.href = "https://maps.apple.com/?q=" + address;
-      } else {
-        window.location.href = "https://www.google.com/maps/search/?api=1&query=" + address;
+      <button class="modal-button apple" onclick="openAppleMaps()">Apple Maps</button>
+
+      <button class="modal-button google" onclick="openGoogleMaps()">Google Maps</button>
+
+      <button class="modal-button close" onclick="closeMapModal()">Cancel</button>
+    </div>
+  </div>
+
+  <script>
+    const address = encodeURIComponent("High Rock Bible Camp");
+
+    function openMapModal() {
+      document.getElementById("mapModal").style.display = "block";
+    }
+
+    function closeMapModal() {
+      document.getElementById("mapModal").style.display = "none";
+    }
+
+    function openAppleMaps() {
+      window.location.href = "https://maps.apple.com/?q=" + address;
+    }
+
+    function openGoogleMaps() {
+      window.location.href = "https://www.google.com/maps/search/?api=1&query=" + address;
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById("mapModal");
+      if (event.target == modal) {
+        closeMapModal();
       }
     }
   </script>
