@@ -65,6 +65,7 @@
       font-size: 18px;
       font-weight: bold;
       transition: opacity 0.2s ease;
+      cursor: pointer;
     }
 
     .button:hover {
@@ -136,25 +137,25 @@
 
     <a class="button staff" href="https://highrockbiblecamp.org/register/staff">Staff Resources</a>
 
-   <a class="button directions" href="#" onclick="chooseMaps()">Get Directions</a>
-
-<script>
-function chooseMaps() {
-  const address = encodeURIComponent("High Rock Bible Camp");
-  
-  if (confirm("Press OK for Apple Maps or Cancel for Google Maps")) {
-    window.location.href = "https://maps.apple.com/?q=" + address;
-  } else {
-    window.location.href = "https://www.google.com/maps/search/?api=1&query=" + address;
-  }
-}
-</script>
+    <a class="button directions" href="#" onclick="chooseMaps()">Get Directions</a>
 
     <p class="footer">
       Stay connected with High Rock Bible Camp all year long.
     </p>
 
   </div>
+
+  <script>
+    function chooseMaps() {
+      const address = encodeURIComponent("High Rock Bible Camp");
+
+      if (confirm("Press OK for Apple Maps or Cancel for Google Maps")) {
+        window.location.href = "https://maps.apple.com/?q=" + address;
+      } else {
+        window.location.href = "https://www.google.com/maps/search/?api=1&query=" + address;
+      }
+    }
+  </script>
 
 </body>
 </html>
