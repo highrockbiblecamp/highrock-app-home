@@ -9,7 +9,7 @@
     body {
       font-family: Arial, sans-serif;
       text-align: center;
-      padding: 20px;
+      padding: 15px;
       margin: 0;
       background: url('camp-background.JPG') no-repeat center center fixed;
       background-size: cover;
@@ -20,53 +20,64 @@
       max-width: 500px;
       margin: 0 auto;
       background: rgba(255, 255, 255, 0.88);
-      padding: 25px;
+      padding: 20px;
       border-radius: 12px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.25);
     }
 
     .logo {
-      max-width: 120px;
-      margin-bottom: 15px;
+      max-width: 100px;
+      margin-bottom: 10px;
     }
 
     h1 {
       margin-bottom: 5px;
-      font-size: 32px;
+      font-size: 28px;
     }
 
     .tagline {
-      font-size: 18px;
-      margin-bottom: 15px;
+      font-size: 16px;
+      margin-bottom: 10px;
       color: #666;
     }
 
     .welcome {
-      font-size: 16px;
-      margin-bottom: 15px;
-      line-height: 1.5;
+      font-size: 14px;
+      margin-bottom: 12px;
+      line-height: 1.4;
     }
 
     .notice {
       font-weight: bold;
-      margin: 20px 0;
-      padding: 12px;
+      margin: 15px 0;
+      padding: 10px;
       background: #fff3cd;
       border-radius: 8px;
       color: #856404;
+      font-size: 14px;
     }
 
-   .button {
-  display: block;
-  padding: 12px;
-  margin: 8px 0;
-  border-radius: 10px;
-  text-decoration: none;
-  font-size: 17px;
-  font-weight: bold;
-  transition: opacity 0.2s ease;
-  cursor: pointer;
-}
+    .button-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 10px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+      transition: opacity 0.2s ease;
+      cursor: pointer;
+      text-align: center;
+    }
 
     .button:hover {
       opacity: 0.9;
@@ -92,19 +103,19 @@
       color: white;
     }
 
-  .staff {
-  background: #5c5fd1;
-  color: white;
-}
+    .staff {
+      background: #5c5fd1;
+      color: white;
+    }
 
-.directions {
-  background: #7b7de3;
-  color: white;
-}
+    .directions {
+      background: #7b7de3;
+      color: white;
+    }
 
     .footer {
-      margin-top: 20px;
-      font-size: 14px;
+      margin-top: 15px;
+      font-size: 13px;
       color: #777;
     }
 
@@ -176,17 +187,21 @@
       📲 Please enable push notifications after installing so you never miss registration deadlines, reminders, or important camp alerts.
     </p>
 
-    <a class="button blue" href="https://highrockbiblecamp.org/register">Register for Camp</a>
+    <div class="button-grid">
 
-    <a class="button green" href="https://highrockbiblecamp.org/sessions">Camp Dates</a>
+      <a class="button blue" href="https://highrockbiblecamp.org/register">Register for Camp</a>
 
-    <a class="button yellow" href="https://highrockbiblecamp.org/parent-info">Camp Info</a>
+      <a class="button green" href="https://highrockbiblecamp.org/sessions">Camp Dates</a>
 
-    <a class="button red" href="https://highrockbiblecamp.org/contact">Contact Us</a>
+      <a class="button yellow" href="https://highrockbiblecamp.org/parent-info">Camp Info</a>
 
-    <a class="button staff" href="https://highrockbiblecamp.org/register/staff">Staff Resources</a>
+      <a class="button red" href="https://highrockbiblecamp.org/contact">Contact Us</a>
 
-    <a class="button directions" href="#" onclick="openMapModal()">Get Directions</a>
+      <a class="button staff" href="https://highrockbiblecamp.org/register/staff">Staff Resources</a>
+
+      <a class="button directions" href="#" onclick="openMapModal()">Get Directions</a>
+
+    </div>
 
     <p class="footer">
       Stay connected with High Rock Bible Camp all year long.
