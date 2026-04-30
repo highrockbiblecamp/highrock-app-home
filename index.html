@@ -136,7 +136,19 @@
 
     <a class="button staff" href="https://highrockbiblecamp.org/register/staff">Staff Resources</a>
 
-    <a class="button directions" href="https://www.google.com/maps/search/?api=1&query=High+Rock+Bible+Camp">Get Directions</a>
+   <a class="button directions" href="#" onclick="chooseMaps()">Get Directions</a>
+
+<script>
+function chooseMaps() {
+  const address = encodeURIComponent("High Rock Bible Camp");
+  
+  if (confirm("Press OK for Apple Maps or Cancel for Google Maps")) {
+    window.location.href = "https://maps.apple.com/?q=" + address;
+  } else {
+    window.location.href = "https://www.google.com/maps/search/?api=1&query=" + address;
+  }
+}
+</script>
 
     <p class="footer">
       Stay connected with High Rock Bible Camp all year long.
